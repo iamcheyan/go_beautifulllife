@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サイト移転のお知らせ</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; margin: 0; padding: 0; background: #f7f7f7; color: #222; }
+    .container { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+    h1 { font-size: 24px; margin: 0 0 12px; }
+    p { margin: 8px 0; line-height: 1.6; }
+    a { color: #0b5fff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { width: 100%; text-align: center; padding: 16px 12px; color: #666; font-size: 12px; position: fixed; left: 0; bottom: 0; background: transparent; }
+  </style>
+  <script>
+    // カウントダウン（1秒ごとに更新）
+    (function() {
+      var secondsRemaining = 5; // 必要に応じて変更可能
+      var countdownEl;
+      function updateText() {
+        if (!countdownEl) countdownEl = document.getElementById('countdown');
+        if (countdownEl) countdownEl.textContent = String(secondsRemaining);
+      }
+      function tick() {
+        secondsRemaining -= 1;
+        updateText();
+        if (secondsRemaining <= 0) {
+          window.location.href = 'http://tv.beautifullife.co.jp/';
+        } else {
+          setTimeout(tick, 1000);
+        }
+      }
+      // 初期表示
+      document.addEventListener('DOMContentLoaded', function() {
+        updateText();
+        setTimeout(tick, 1000);
+      });
+    })();
+  </script>
+  <link rel="canonical" href="http://tv.beautifullife.co.jp/">
+</head>
+<body>
+  <div class="container">
+    <h1>サイト移転のお知らせ</h1>
+    <p>本サイトは <a href="http://tv.beautifullife.co.jp/">http://tv.beautifullife.co.jp/</a> に移転しました。</p>
+    <p><span id="countdown">5</span>秒後に自動的にリダイレクトします。</p>
+    <p>すぐに移動するには <a href="http://tv.beautifullife.co.jp/">こちら</a> をクリックしてください。</p>
+  </div>
+  <footer>
+    Copyright © 2019-2025 Beautiful Life. All rights reserved.
+  </footer>
+</body>
+</html>
+
+
